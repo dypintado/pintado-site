@@ -76,7 +76,7 @@ export default function HackathonsSection() {
         </motion.p>
 
         {/* Timeline */}
-        <ol className="relative border-l border-[#1E1E1E] pl-8">
+        <ol className="relative border-l border-[#1E1E1E] pl-12">
           {projects.map((project, i) => (
             <motion.li
               key={project.name}
@@ -88,13 +88,13 @@ export default function HackathonsSection() {
             >
               {/* Timeline dot — green */}
               <span
-                className="absolute left-0 top-2 block h-2 w-2 -translate-x-[calc(50%+0.5px)]"
-                style={{ background: "#00ff88", borderRadius: "50%" }}
+                className="absolute -left-12 top-6 block h-2 w-2"
+                style={{ background: "#00ff88", borderRadius: "50%", transform: "translateX(calc(-50% + 0.5px))" }}
               />
 
               {/* Year */}
               <p
-                className="mb-1"
+                className="mb-1 ml-1"
                 style={{
                   fontFamily: "'DM Mono', monospace",
                   fontSize: "0.65rem",
