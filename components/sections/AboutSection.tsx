@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion";
 
-const bio =
-  "I started in sales and operations, then taught myself the technical side. Now I build AI systems that bridge both worlds — voice receptionists, workflow automation, and tools built to last.";
 
+const bio = "Where most see a gap between business and technology, I build the bridge. AI-certified, deployment-proven, and backed by a foundation in sales — I deliver intelligent systems built for the real world."
 export default function AboutSection() {
   return (
     <section
