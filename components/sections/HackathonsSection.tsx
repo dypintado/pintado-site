@@ -88,8 +88,8 @@ export default function HackathonsSection() {
             >
               {/* Timeline dot — green */}
               <span
-                className="absolute -left-12 top-6 block h-2 w-2"
-                style={{ background: "#00ff88", borderRadius: "50%", transform: "translateX(calc(-50% + 0.5px))" }}
+                className="absolute -left-12 top-6 block h-2 w-2 -translate-x-[20px]"
+                style={{ background: "#00ff88", borderRadius: "50%" }}
               />
 
               {/* Year */}
