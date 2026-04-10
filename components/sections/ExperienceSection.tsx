@@ -92,11 +92,21 @@ const credentials = [
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
+type HackathonCardData = {
+  event: string;
+  year: string;
+  project: string;
+  description: string;
+  photoLabel: string;
+  photo: string | null;
+  photoHeight: string;
+};
+
 function HackathonCard({
   card,
   index,
 }: {
-  card: (typeof hackathons)[number];
+  card: HackathonCardData;
   index: number;
 }) {
   return (
