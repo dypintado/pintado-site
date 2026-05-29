@@ -230,7 +230,7 @@ export function GlassRefractionHero() {
               marginBottom: "1.5rem",
             }}
           >
-            <GlassButton href="/images/pintado.RESUME.pdf" target="_blank" rel="noopener noreferrer" primary>
+            <GlassButton href="/pintado.RESUME.pdf" target="_blank" rel="noopener noreferrer" primary>
               Resume / CV
             </GlassButton>
 
