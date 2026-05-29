@@ -57,6 +57,11 @@ const credentials = [
     issuer2: "Anthropic",
     badge2: "Completed",
     badge2Style: "solid" as const,
+    photo3: "/aws-cert.jpg",
+    title3: "AWS AI & ML Scholars",
+    issuer3: "Amazon Web Services & Udacity",
+    badge3: "Completed",
+    badge3Style: "solid" as const,
   },
   {
     icon: "⚡",
@@ -82,21 +87,6 @@ const credentials = [
     note: "Covering vibe coding, web and app development, and AI product building under one of Miami's leading AI practitioners.",
     photo: null,
     photoContain: false,
-    photo2: null,
-    title2: null,
-    issuer2: null,
-    badge2: null,
-    badge2Style: null,
-  },
-  {
-    icon: "☁️",
-    title: "AWS AI & ML Scholars",
-    issuer: "Amazon Web Services & Udacity",
-    badge: "Completed",
-    badgeStyle: "solid" as const,
-    note: null,
-    photo: "/aws-cert.jpg",
-    photoContain: true,
     photo2: null,
     title2: null,
     issuer2: null,
@@ -355,49 +345,122 @@ function CredentialItem({
 
       {/* Optional second credential */}
       {item.title2 && (
-        <>
-          <div style={{ borderTop: "1px solid #1E1E1E", marginTop: "1rem", paddingTop: "1rem" }}>
-            <h4
-              style={{
-                fontFamily: "'Bodoni Moda', 'Playfair Display', serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                fontSize: "1.05rem",
-                color: "#F0F0F0",
-                lineHeight: 1.25,
-                marginBottom: "0.3rem",
-              }}
-            >
-              {item.title2}
-            </h4>
-            <p
-              style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "0.68rem",
-                color: "#555555",
-                letterSpacing: "0.06em",
-                marginBottom: "0.9rem",
-              }}
-            >
-              {item.issuer2}
-            </p>
-            <span
-              style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "0.56rem",
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                border: "1px solid rgba(0,255,136,0.4)",
-                color: "#00ff88",
-                padding: "3px 10px",
-                borderRadius: "2px",
-                display: "inline-block",
-              }}
-            >
-              {item.badge2}
-            </span>
-          </div>
-        </>
+        <div style={{ borderTop: "1px solid #1E1E1E", marginTop: "1rem", paddingTop: "1rem" }}>
+          <h4
+            style={{
+              fontFamily: "'Bodoni Moda', 'Playfair Display', serif",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "1.05rem",
+              color: "#F0F0F0",
+              lineHeight: 1.25,
+              marginBottom: "0.3rem",
+            }}
+          >
+            {item.title2}
+          </h4>
+          <p
+            style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.68rem",
+              color: "#555555",
+              letterSpacing: "0.06em",
+              marginBottom: "0.9rem",
+            }}
+          >
+            {item.issuer2}
+          </p>
+          <span
+            style={
+              item.badge2Style === "solid"
+                ? {
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "0.56rem",
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    background: "#00ff88",
+                    color: "#080808",
+                    fontWeight: 700,
+                    padding: "3px 10px",
+                    borderRadius: "2px",
+                    display: "inline-block",
+                  }
+                : {
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "0.56rem",
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    border: "1px solid rgba(0,255,136,0.4)",
+                    color: "#00ff88",
+                    padding: "3px 10px",
+                    borderRadius: "2px",
+                    display: "inline-block",
+                  }
+            }
+          >
+            {item.badge2}
+          </span>
+        </div>
+      )}
+
+      {/* Optional third credential */}
+      {"title3" in item && item.title3 && (
+        <div style={{ borderTop: "1px solid #1E1E1E", marginTop: "1rem", paddingTop: "1rem" }}>
+          <h4
+            style={{
+              fontFamily: "'Bodoni Moda', 'Playfair Display', serif",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "1.05rem",
+              color: "#F0F0F0",
+              lineHeight: 1.25,
+              marginBottom: "0.3rem",
+            }}
+          >
+            {item.title3}
+          </h4>
+          <p
+            style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "0.68rem",
+              color: "#555555",
+              letterSpacing: "0.06em",
+              marginBottom: "0.9rem",
+            }}
+          >
+            {item.issuer3}
+          </p>
+          <span
+            style={
+              item.badge3Style === "solid"
+                ? {
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "0.56rem",
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    background: "#00ff88",
+                    color: "#080808",
+                    fontWeight: 700,
+                    padding: "3px 10px",
+                    borderRadius: "2px",
+                    display: "inline-block",
+                  }
+                : {
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "0.56rem",
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    border: "1px solid rgba(0,255,136,0.4)",
+                    color: "#00ff88",
+                    padding: "3px 10px",
+                    borderRadius: "2px",
+                    display: "inline-block",
+                  }
+            }
+          >
+            {item.badge3}
+          </span>
+        </div>
       )}
         </div>{/* end left */}
 
@@ -424,6 +487,22 @@ function CredentialItem({
                   <img
                     src={item.photo2}
                     alt={item.title2 ?? ""}
+                    style={{
+                      width: "100%",
+                      height: "140px",
+                      objectFit: "contain",
+                      background: "#111111",
+                      padding: "8px",
+                      borderRadius: "title3" in item && item.title3 ? "0" : "0 0 4px 4px",
+                      margin: 0,
+                      display: "block",
+                    }}
+                  />
+                )}
+                {"photo3" in item && item.photo3 && (
+                  <img
+                    src={item.photo3}
+                    alt={"title3" in item ? (item.title3 ?? "") : ""}
                     style={{
                       width: "100%",
                       height: "140px",
