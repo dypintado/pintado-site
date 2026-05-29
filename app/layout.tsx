@@ -1,4 +1,7 @@
-export const metadata = {
+import type { Metadata } from "next"
+import "./globals.css"
+
+export const metadata: Metadata = {
   title: "Dylan Pintado — AI Automation Engineer",
   description: "Where most see a gap between business and technology, I build the bridge.",
   openGraph: {
@@ -12,4 +15,16 @@ export const metadata = {
     title: "Dylan Pintado — AI Automation Engineer",
     images: ["https://dylanpintado.com/og-image.png"],
   },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
 }
